@@ -1,0 +1,133 @@
+/* App.css */
+
+.app-container {
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* College Logo/Image placeholder */
+.logo-placeholder {
+  width: 100%;
+  height: 150px;
+  background-color: #f1f3f4;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.logo-placeholder::after {
+  content: "Insert College Logo/Banner Here (150px height recommended)";
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Header section mimicking Google Forms top section */
+.form-header {
+  border: 1px solid var(--border-color);
+  border-top: 10px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #ffffff;
+}
+
+.form-header h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.form-header .form-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Individual form card groups */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  background-color: transparent;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-bottom: 2px solid var(--input-focus);
+}
+
+/* Submit section */
+.form-submit {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.form-submit button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+.form-submit button:hover {
+  background-color: var(--primary-hover);
+}
+
+.form-submit button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 16px 8px;
+  }
+  
+  .form-header,
+  .form-group {
+    padding: 16px;
+  }
+  
+  .form-header h1 {
+    font-size: 24px;
+  }
+}
