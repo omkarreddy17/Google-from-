@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitStudentData } from '../services/api';
+import { submitStudentData, sendAdminNotification } from '../services/api';
 
 export default function StudentForm() {
   const initialFormState = {
@@ -52,6 +52,10 @@ export default function StudentForm() {
     setIsSubmitting(true);
     try {
       await submitStudentData(formData);
+      // Dispatch admin email notification asynchronously so it doesn't block UI reset
+      sendAdminNotification(formData).catch((err) => {
+        console.error('API Service: Email notification failed:', err);
+      });
       // After successful submission, clear the form as requested
       setFormData(initialFormState);
     } catch (error) {
