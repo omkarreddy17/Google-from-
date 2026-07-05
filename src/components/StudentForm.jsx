@@ -18,6 +18,8 @@ export default function StudentForm() {
 
   const [formData, setFormData] = useState(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,8 +54,11 @@ export default function StudentForm() {
     if (isSubmitting) return;
 
     setIsSubmitting(true);
+    setSubmitStatus(null);
+    setErrorMessage('');
     try {
       await submitStudentData(formData);
+      setSubmitStatus('success');
       // Dispatch admin email notification asynchronously so it doesn't block UI reset
       sendAdminNotification(formData).catch((err) => {
         console.error('API Service: Email notification failed:', err);
@@ -62,6 +67,8 @@ export default function StudentForm() {
       setFormData(initialFormState);
     } catch (error) {
       console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      setErrorMessage(error.message || 'An error occurred during submission.');
     } finally {
       setIsSubmitting(false);
     }
@@ -205,6 +212,18 @@ export default function StudentForm() {
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
         </div>
+
+        {submitStatus === 'success' && (
+          <div className="submit-success-message">
+            Registration submitted successfully!
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="submit-error-message">
+            Submission failed: {errorMessage}
+          </div>
+        )}
       </form>
     </div>
   );

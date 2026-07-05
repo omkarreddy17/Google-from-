@@ -242,3 +242,27 @@ form {
   max-width: 1200px;
 }
 
+.submit-success-message {
+  background-color: #e6f4ea;
+  color: #137333;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 16px;
+  border: 1px solid #ceead6;
+  text-align: center;
+}
+
+.submit-error-message {
+  background-color: #fce8e6;
+  color: #c5221f;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 16px;
+  border: 1px solid #fad2cf;
+  text-align: center;
+}
+
