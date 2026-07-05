@@ -25,6 +25,7 @@ export async function submitStudentData(data) {
     email: data.email,
     college: data.college,
     course: data.course,
+    course_year: data.courseYear,
     parent_name: data.parentName,
     parent_phone: data.parentPhone
   };
@@ -104,6 +105,7 @@ export async function sendAdminNotification(data) {
 - Phone: ${data.phone}
 - College: ${data.college}
 - Course: ${data.course}
+- Course Year: ${data.courseYear}
 - Parent's Name: ${data.parentName}
 - Parent's Phone: ${data.parentPhone}`,
       time: new Date().toLocaleString(),
@@ -114,6 +116,7 @@ export async function sendAdminNotification(data) {
       student_phone: data.phone,
       student_college: data.college,
       student_course: data.course,
+      course_year: data.courseYear,
       parent_name: data.parentName,
       parent_phone: data.parentPhone
     }

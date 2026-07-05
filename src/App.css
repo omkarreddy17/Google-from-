@@ -10,24 +10,22 @@
   gap: 20px;
 }
 
-/* College Logo/Image placeholder */
-.logo-placeholder {
-  width: 100%;
-  height: 150px;
-  background-color: #f1f3f4;
-  border: 1px dashed var(--border-color);
-  border-radius: 8px;
+/* College Logo/Image wrapper */
+.logo-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-bottom: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 
-.logo-placeholder::after {
-  content: "Insert College Logo/Banner Here (150px height recommended)";
-  color: var(--text-secondary);
-  font-size: 14px;
-  text-align: center;
+.form-logo {
+  max-height: 120px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Header section mimicking Google Forms top section */

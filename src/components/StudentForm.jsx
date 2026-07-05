@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitStudentData, sendAdminNotification } from '../services/api';
+import logo from '../assets/logo.png';
 
 export default function StudentForm() {
   const initialFormState = {
@@ -10,6 +11,7 @@ export default function StudentForm() {
     email: '',
     college: '',
     course: '',
+    courseYear: '',
     parentName: '',
     parentPhone: ''
   };
@@ -67,8 +69,9 @@ export default function StudentForm() {
 
   return (
     <div className="form-container">
-      {/* Spacer for future College Logo/Image */}
-      <div className="logo-placeholder"></div>
+      <div className="logo-wrapper">
+        <img src={logo} alt="Grand Tour Logo" className="form-logo" />
+      </div>
       
       <div className="form-header">
         <h1>Student Registration Form</h1>
@@ -155,6 +158,19 @@ export default function StudentForm() {
             id="course"
             name="course"
             value={formData.course}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="courseYear">Course Year</label>
+          <input
+            type="text"
+            id="courseYear"
+            name="courseYear"
+            placeholder="e.g. 1st Year, 2nd Year, etc."
+            value={formData.courseYear}
             onChange={handleChange}
             required
           />

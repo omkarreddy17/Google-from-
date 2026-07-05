@@ -18,7 +18,8 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-color);
+  background: linear-gradient(135deg, #f0f4f9 0%, #e6eef8 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.5;
   display: flex;

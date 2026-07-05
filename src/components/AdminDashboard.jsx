@@ -57,6 +57,7 @@ export default function AdminDashboard({ onLogout }) {
                 <th>Email Address</th>
                 <th>College</th>
                 <th>Course</th>
+                <th>Course Year</th>
                 <th>Parent's Name</th>
                 <th>Parent's Phone</th>
                 <th>Registered At</th>
@@ -73,6 +74,7 @@ export default function AdminDashboard({ onLogout }) {
                   <td>{student.email}</td>
                   <td>{student.college}</td>
                   <td>{student.course}</td>
+                  <td>{student.course_year || '-'}</td>
                   <td>{student.parent_name}</td>
                   <td>{student.parent_phone}</td>
                   <td>{formatDate(student.created_at)}</td>
